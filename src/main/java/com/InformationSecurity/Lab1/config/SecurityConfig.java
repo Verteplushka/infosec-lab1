@@ -17,7 +17,7 @@ public class SecurityConfig {
     private final JwtFilter jwtFilter;
 
     public SecurityConfig(JwtFilter jwtFilter) {
-        this.jwtFilter = jwtFilter;
+        this.jwtFilter = new JwtFilter(jwtFilter.getJwtService(), jwtFilter.getUserService());
     }
 
     @Bean
