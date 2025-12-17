@@ -13,7 +13,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>Lab1</name>
     <description>Information Security Lab1</description>
-    <url/>
+    <url>https://github.com/Verteplushka/infosec-lab1</url>
     <licenses>
         <license/>
     </licenses>
@@ -94,6 +94,17 @@
             <groupId>com.github.spotbugs</groupId>
             <artifactId>spotbugs-annotations</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>1.5.22</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.5.22</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
