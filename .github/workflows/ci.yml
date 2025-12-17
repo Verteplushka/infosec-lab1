@@ -39,13 +39,13 @@ jobs:
         run: mvn org.owasp:dependency-check-maven:check -Dnvd.apiKey=${NVD_API_KEY} -Dossindex.user=${OSS_INDEX_USER} -Dossindex.token=${OSS_INDEX_TOKEN}
 
       - name: Upload SpotBugs report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: spotbugs-report
           path: target/spotbugs/spotbugs.html
 
       - name: Upload Dependency-Check report
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
           path: target/dependency-check-report.html
