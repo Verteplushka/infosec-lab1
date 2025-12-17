@@ -137,6 +137,8 @@
                 <version>12.1.9</version>
                 <configuration>
                     <nvdApiKey>${nvd.apiKey}</nvdApiKey>
+                    <ossIndexUsername>${ossindex.user}</ossIndexUsername>
+                    <ossIndexPassword>${ossindex.token}</ossIndexPassword>
                     <failBuildOnCVSS>7</failBuildOnCVSS>
                     <assemblyAnalyzerEnabled>false</assemblyAnalyzerEnabled>
                 </configuration>
