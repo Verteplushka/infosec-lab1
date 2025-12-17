@@ -37,3 +37,15 @@ jobs:
           OSS_INDEX_USER: ${{ secrets.OSS_INDEX_USER }}
           OSS_INDEX_TOKEN: ${{ secrets.OSS_INDEX_TOKEN }}
         run: mvn org.owasp:dependency-check-maven:check -Dnvd.apiKey=${NVD_API_KEY} -Dossindex.user=${OSS_INDEX_USER} -Dossindex.token=${OSS_INDEX_TOKEN}
+
+      - name: Upload SpotBugs report
+        uses: actions/upload-artifact@v3
+        with:
+          name: spotbugs-report
+          path: target/spotbugs/spotbugs.html
+
+      - name: Upload Dependency-Check report
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependency-check-report
+          path: target/dependency-check-report.html
