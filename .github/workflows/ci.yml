@@ -32,7 +32,6 @@ jobs:
         run: mvn com.github.spotbugs:spotbugs-maven-plugin:check
 
       - name: Run OWASP Dependency-Check
-        run: mvn org.owasp:dependency-check-maven:check -Dnvd.apiKey=$NVD_API_KEY
         env:
           NVD_API_KEY: ${{ secrets.NVD_API_KEY }}
-
+        run: mvn dependency-check:check

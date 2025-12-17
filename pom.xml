@@ -32,12 +32,13 @@
 		<spotbugs-maven-plugin.version>4.9.3.0</spotbugs-maven-plugin.version>
 		<findsecbugs.version>LATEST</findsecbugs.version>
 		<spotbugs-slf4j.version>1.5.0</spotbugs-slf4j.version>
+		<tomcat.version>10.1.49</tomcat.version>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
-			<version>42.6.0</version>
+			<version>42.7.8</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -129,6 +130,24 @@
 						<version>${spotbugs.version}</version>
 					</dependency>
 				</dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.owasp</groupId>
+				<artifactId>dependency-check-maven</artifactId>
+				<version>9.0.9</version>
+				<configuration>
+					<nvdApiKeyEnvironmentVariable>NVD_API_KEY</nvdApiKeyEnvironmentVariable>
+					<failBuildOnCVSS>8</failBuildOnCVSS>
+					<format>HTML</format>
+					<formats>HTML,JSON</formats>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
