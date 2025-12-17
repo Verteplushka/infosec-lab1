@@ -31,9 +31,5 @@ jobs:
       - name: Run SpotBugs
         run: mvn com.github.spotbugs:spotbugs-maven-plugin:check
 
-      - name: Run OWASP Dependency-Check (SCA)
-        uses: dependency-check/Dependency-Check_Action@main
-        with:
-          project: 'Lab1'
-          path: '.'
-          format: 'HTML'
+      - name: Run OWASP Dependency-Check
+        run: mvn org.owasp:dependency-check-maven:check
